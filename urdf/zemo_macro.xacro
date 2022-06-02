@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="zemo">
+    <xacro:property name="chassis_len" value="0.24"/>
+    <xacro:property name="chassis_wid" value="0.15"/>
+    <xacro:property name="chassis_th" value="0.047"/>
+    <xacro:property name="wheel_r" value="0.035"/>
+    <xacro:property name="wheel_th" value="0.022"/>
+    <xacro:property name="caster_len" value="0.03"/>
+    <xacro:property name="caster_wid" value="0.03"/>
+    <xacro:property name="caster_th" value="0.07"/>
+    <xacro:property name="gap_x" value="0.04"/>
+    
+</robot>

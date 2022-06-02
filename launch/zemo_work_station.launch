@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" command="$(find xacro)/xacro $(find zemo_rover)/urdf/zemo.xacro"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find zemo_rover)/config/zemo_rviz.rviz"/>
+    <node name="RobotStatePublisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <node name="laptop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+    
+</launch>

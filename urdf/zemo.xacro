@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="zemo">
+    
+    <xacro:include filename="$(find zemo_rover)/urdf/zemo_macro.xacro"/>
+
+    <link name="zemo_frame"/>
+    
+    
+    <link name="zemo_chassis">
+        <visual>
+            <geometry>
+                <box size="${chassis_len} ${chassis_wid} ${chassis_th}"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="zemo_joint" type="fixed">
+        <parent link="zemo_frame"/>
+        <child link="zemo_chassis"/>
+        <origin xyz="0.08 0.0 0.08" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+
+    <link name="right_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_r}" length="${wheel_th}"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="right_wheel_link" type="fixed">
+        <parent link="zemo_chassis"/>
+        <child link="right_wheel"/>
+        <origin xyz="-0.08 -0.1 -0.047" rpy="1.5707 0.0 0.0"/>
+    </joint>
+
+    <link name="left_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_r}" length="${wheel_th}"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="left_wheel_link" type="fixed">
+        <parent link="zemo_chassis"/>
+        <child link="left_wheel"/>
+        <origin xyz="-0.08 0.1 -0.047" rpy="1.5707 0.0 0.0"/>
+    </joint>
+
+    <link name="caster_wheel">
+        <visual>
+            <geometry>
+                <box size="${caster_len} ${caster_wid} ${caster_th}"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="caster_wheel_link" type="fixed">
+        <parent link="zemo_chassis"/>
+        <child link="caster_wheel"/>
+        <origin xyz="0.09 0.0 -0.04" rpy="0.0 0.0 0.0"/>
+    </joint>
+    
+    
+</robot>
